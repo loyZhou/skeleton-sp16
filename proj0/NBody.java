@@ -28,9 +28,13 @@ public class NBody{
 		double radius = readRadius(filename);
 		Planet[] stars = readPlanets(filename);
 
-		StdDraw.setScale(0, 2 * radius);
+		StdDraw.setScale(-radius, radius);
 		StdDraw.clear();
 		// picture centered around cooridnate(radius, radius)
-		StdDraw.picture(radius, radius, "./images/starfield.jpg");
+		StdDraw.picture(0, 0, "./images/starfield.jpg");
+
+		for (Planet p : stars){
+			p.draw();
+		}
 	}
 }
